@@ -1,0 +1,73 @@
+version: '3'
+services:
+  shell:
+    build: .
+    image: hotlouddusty_shell
+    stdin_open: true
+    tty: true
+    entrypoint: /bin/sh
+    privileged: true
+    volumes:
+      - .:/app
+      - /dev/snd:/dev/snd
+      - /dev/bus/usb:/dev/bus/usb
+
+  pipenv:
+    image: hotlouddusty_shell
+    entrypoint: pipenv
+    volumes:
+      - .:/app
+    depends_on:
+      - shell
+
+  dusty:
+    build: .
+    image: hotlouddusty_shell
+    tty: true
+    entrypoint: python dusty.py
+    privileged: true
+    volumes:
+      - .:/app
+      - /dev/bus/usb:/dev/bus/usb
+
+  loud:
+    build: .
+    image: hotlouddusty_shell
+    tty: true
+    entrypoint: python loud.py
+    privileged: true
+    volumes:
+      - .:/app
+      - /dev/snd:/dev/snd
+
+  sensors_switch:
+    build: .
+    image: hotlouddusty_shell
+    tty: true
+    entrypoint: python sensors_switch.py
+    privileged: true
+    volumes:
+      - .:/app
+
+  soundmeter:
+    build: .
+    image: hotlouddusty_shell
+    tty: true
+    entrypoint: soundmeter
+    privileged: true
+    volumes:
+      - .:/app
+      - /dev/snd:/dev/snd
+
+  python:
+    build: .
+    image: hotlouddusty_shell
+    tty: true
+    entrypoint: python
+    privileged: true
+    volumes:
+      - .:/app
+      - /dev/snd:/dev/snd
+      - /dev/bus/usb:/dev/bus/usb
+    ports:
+      - "127.0.0.1:20175:20175"
