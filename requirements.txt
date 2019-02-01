@@ -1,0 +1,4 @@
+psutil
+pyaudio
+pynmea2
+
