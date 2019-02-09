@@ -1,4 +1,4 @@
 psutil
 pyaudio
 pynmea2
-
+Adafruit_Python_DHT
