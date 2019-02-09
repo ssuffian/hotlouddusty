@@ -1,4 +1,4 @@
-# bm_pi_zero_sensors
+# hotlouddusty
 
 - loud: https://github.com/shichao-an/soundmeter
 - dusty: https://github.com/ikalchev/py-sds011
