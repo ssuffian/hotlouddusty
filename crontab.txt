@@ -1,0 +1,1 @@
+@reboot ~/hotlouddusty/hotlouddusty/startup.sh
