@@ -1,0 +1,3 @@
+[submodule "lib/py-sds011"]
+	path = lib/py-sds011
+	url = https://github.com/ikalchev/py-sds011.git
