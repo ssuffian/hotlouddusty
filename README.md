@@ -10,7 +10,7 @@
 	sudo apt install git portaudio19-dev python-dev alsa-utils libav-tools android-tools-adb screen python-pip
 	git clone git@github.com:ssuffian/hotlouddusty.git
 	pip install -r requirements.txt 
-        crontab crontab.txt
+	crontab crontab.txt
 	
 ## Audio
 
