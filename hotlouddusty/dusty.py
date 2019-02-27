@@ -3,7 +3,6 @@ import os
 import time
 
 from sds011 import SDS011
-import sensors_switch
 
 from helpers import write_to_file
 
