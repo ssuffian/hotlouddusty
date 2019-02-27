@@ -7,18 +7,18 @@
 ## Install
 
 	sudo apt update
-	sudo apt install git portaudio19-dev python-dev alsa-utils libav-tools android-tools-adb screen
-	git clone 
+	sudo apt install git portaudio19-dev python-dev alsa-utils libav-tools android-tools-adb screen python-pip
+	git clone git@github.com:ssuffian/hotlouddusty.git
 	pip install -r requirements.txt 
         crontab crontab.txt
 	
 ## Audio
 
-Go into alsa.conf and change the 0's to 1's for the following lines:
+Go into alsa.conf and change the 0's to 1's for the following lines (`defaults.ctl card 0` and `defaults.pcm.card 0`):
 
 	sudo vim /usr/share/alsa/alsa.conf
-	defaults.ctl.card 0
-    	defaults.pcm.card 0
+	defaults.ctl.card 1
+    	defaults.pcm.card 1
 
 ## Dusty
 
@@ -31,5 +31,14 @@ If it is a new device, you must go on the phone and authorize the device.
 
 ## Other
 
-        crontab -l > crontab.txt
-        crontab crontab.txt
+To save crontab to file:
+        
+	crontab -l > crontab.txt
+        
+To load crontab from file:
+
+	crontab crontab.txt
+
+## Vim
+	sudo apt install vim
+	
