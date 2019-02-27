@@ -6,9 +6,9 @@
 
 ## Install
 
-	sudo apt-get update
-	sudo apt-get install portaudio19-dev python-dev alsa-utils libav-tools
-        sudo apt install android-tools-adb screen
+	sudo apt update
+	sudo apt install git portaudio19-dev python-dev alsa-utils libav-tools android-tools-adb screen
+	git clone 
 	pip install -r requirements.txt 
         crontab crontab.txt
 	
