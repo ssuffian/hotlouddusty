@@ -21,8 +21,10 @@ Go into alsa.conf and change the 0's to 1's for the following lines (`defaults.c
     	defaults.pcm.card 1
 
 ## Dusty
-
+	
 	cd lib/py-sds011
+	git submodule init 
+	git submodule update
 	sudo python setup.py install
 
 ## Where
@@ -41,4 +43,7 @@ To load crontab from file:
 
 ## Vim
 	sudo apt install vim
+	sudo update-alternatives --config editor 
+
+Select vim.basic
 	
