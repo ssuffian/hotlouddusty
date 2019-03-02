@@ -7,9 +7,9 @@
 ## Install
 
 	sudo apt update
-	sudo apt install git portaudio19-dev python-dev alsa-utils libav-tools android-tools-adb screen python-pip
+	sudo apt install git portaudio19-dev python-dev alsa-utils libav-tools android-tools-adb screen python3-pip
 	git clone git@github.com:ssuffian/hotlouddusty.git
-	pip install -r requirements.txt 
+	pip3 install -r requirements.txt 
         crontab crontab.txt
 	
 ## Audio
@@ -25,7 +25,7 @@ Go into alsa.conf and change the 0's to 1's for the following lines (`defaults.c
 	cd lib/py-sds011
 	git submodule init 
 	git submodule update
-	sudo python setup.py install
+	sudo python3 setup.py install
 
 ## Where
 
