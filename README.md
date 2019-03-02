@@ -8,6 +8,7 @@
 ## Install
 
 	sudo apt update
+	sudo raspi-config # Localization Options -> Time Zone -> Change Time Zone
 	sudo apt install git portaudio19-dev python-dev alsa-utils libav-tools android-tools-adb screen python3-pip
 	git clone git@github.com:ssuffian/hotlouddusty.git
 	pip3 install -r requirements.txt 
