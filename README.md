@@ -13,6 +13,10 @@
 	git clone git@github.com:ssuffian/hotlouddusty.git
 	pip3 install -r requirements.txt 
         crontab crontab.txt
+
+## Hot
+
+You need to install a DHT22/AM2302 temperature sensor. It is currently set up for the data pin to be on pin 23.
 	
 ## Audio
 
