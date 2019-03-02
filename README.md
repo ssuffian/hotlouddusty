@@ -2,7 +2,8 @@
 
 - loud: https://github.com/shichao-an/soundmeter
 - dusty: https://github.com/ikalchev/py-sds011
-- where: https://github.com/Knio/pynmea2
+- where: https://github.com/Knio/pynmea2, http://www.jillybunch.com/sharegps/nmea-usb-linux.html
+
 
 ## Install
 
@@ -31,7 +32,15 @@ This is the module that specifically requires python3. The others could be run o
 
 ## Where
 
+
 If it is a new device, you must go on the phone and authorize the device.
+
+### Debugging
+
+This [page](http://www.jillybunch.com/sharegps/nmea-usb-linux.html) is helpful with debugging (and was how I figured out how to get it setup.
+
+	sudo apt install gpsd netcat
+
 
 ## Other
 
