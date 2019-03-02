@@ -21,6 +21,8 @@ Go into alsa.conf and change the 0's to 1's for the following lines (`defaults.c
     	defaults.pcm.card 1
 
 ## Dusty
+
+This is the module that specifically requires python3. The others could be run on python2.7, but for consistently everything is being run on python3
 	
 	cd lib/py-sds011
 	git submodule init 
