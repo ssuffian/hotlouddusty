@@ -1,6 +1,6 @@
 */__pycache__
 */*.egg-info/*
 data/*
-!data/README.md
+!data/.gitkeep
 */*.pyc
 */*.swp
