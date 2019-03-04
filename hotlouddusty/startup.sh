@@ -1,4 +1,5 @@
 #!/bin/sh
+fuser -k 20175/tcp
 adb forward tcp:20175 tcp:50000
 pkill screen
 screen -dmS hot bash -c 'cd ~/hotlouddusty/hotlouddusty; python3 hot.py'
