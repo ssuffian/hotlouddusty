@@ -1,2 +1,3 @@
 @reboot ~/hotlouddusty/hotlouddusty/startup.sh
 */5 * * * * ~/hotlouddusty/hotlouddusty/startup.sh
+0 * * * * sudo reboot
