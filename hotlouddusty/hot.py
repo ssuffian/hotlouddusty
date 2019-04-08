@@ -21,7 +21,7 @@ class Hot():
                 HOT_FILEPATH,
                 round(temperature, 2),
                 round(humidity, 2),
-                ["temperature", "humidity"],
+                ["temperature_c", "humidity"],
             )
         else:
             print('Failed to get reading. Try again!')
