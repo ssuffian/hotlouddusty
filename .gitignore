@@ -1,6 +1,8 @@
 */__pycache__
+*/*/__pycache__
 */*.egg-info/*
 data/*
 !data/.gitkeep
 */*.pyc
+*/*/*.pyc
 */*.swp
