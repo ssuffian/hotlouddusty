@@ -3,3 +3,6 @@ pyaudio
 pynmea2
 Adafruit_Python_DHT
 pyserial
+spidev
+Pillow
+RPi.GPIO
