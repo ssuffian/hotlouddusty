@@ -16,7 +16,7 @@ class Loud():
     def record(self):
         p = pyaudio.PyAudio()
         stream = p.open(format = pyaudio.paInt16,
-            channels = 2,
+            channels = 1,
             rate = 44100,
             input = True,
             frames_per_buffer = self.chunk

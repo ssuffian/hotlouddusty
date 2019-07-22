@@ -8,6 +8,10 @@ def write_to_file(filepath, val1, val2, cols = ["db", "rms"], now_str=None):
     if now_str is None:
         now_str = datetime.now().isoformat()
 
+    with open(filepath.replace('.csv','-current.csv'), 'w') as f:
+        f.write("datetime,{}\n".format(",".join(cols)))
+        f.write("{},{},{}\n".format(now_str, val1, val2))
+
     if os.path.isfile(filepath):
         with open(filepath, 'a') as f:
             f.write("{},{},{}\n".format(now_str, val1, val2))

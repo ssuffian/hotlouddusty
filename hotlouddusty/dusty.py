@@ -6,14 +6,17 @@ from sds011 import SDS011
 
 from helpers import write_to_file
 
+DUSTY_SENSOR_NUM_RECORDINGS = 5
 DUSTY_SENSOR_FREQUENCY_SECONDS = 1
 DUSTY_SENSOR_BOOT_DELAY_SECONDS = 5
 DUSTY_FILEPATH = '../data/dusty.csv'
 DUSTY_DEV_USB = '/dev/ttyUSB0'
+#DUSTY_DEV_USB = '/dev/ttyAMA0'
 
 class Dusty():
     def __init__(self):
         self.sensor = SDS011(DUSTY_DEV_USB, use_query_mode=True)
+        self.serial = self.sensor.ser
 
     def start(self):
         self.sensor.sleep(sleep=False)
@@ -32,11 +35,12 @@ class Dusty():
 
     def stop(self):
        self.sensor.sleep()
+       self.serial.close()
 
     def run_pm(self):
         self.start()
         try:
-            while True:
+            for i in range(0, DUSTY_SENSOR_NUM_RECORDINGS):
                 self.record()
         except:
             raise
