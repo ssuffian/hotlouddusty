@@ -13,6 +13,23 @@ import traceback
 def _slice_str_dt(dt):
     return datetime.strptime(dt, '%Y-%m-%dT%H:%M:%S.%f').strftime('%H:%M:%S')
 
+def quality_to_word(num_str):
+    try:
+        num = float(num_str)
+    except:
+        num = -1
+    if num < 12.0:
+        return "Good"
+    elif num < 35.4:
+        return "Moderate"
+    elif num < 55.4:
+        return "Unhealthy-ish"
+    elif num < 150.4:
+        return "Unhealthy!"
+    elif num < 250.4:
+        return "Very Unhealthy!"
+    elif num < 500:
+        return "Hazardous"
 
 def display():
     try:
@@ -30,12 +47,12 @@ def display():
             loud = '{} db, {}'.format(data['loud']['db'], _slice_str_dt(data['loud']['datetime']))
             dusty = '{} pm2.5, {}'.format(data['dusty']['pm2.5'], _slice_str_dt(data['dusty']['datetime']))
             #time_draw.text((10, 5), time.strftime( 'Hot     %H:%M:%S'), font = font18, fill = 0)
-            time_draw.text((10, 25), loud, font = font18, fill = 0)
+            time_draw.text((10, 25), quality_to_word(data['dusty']['pm2.5']), font = font18, fill = 0)
             time_draw.text((10, 45), dusty, font = font18, fill = 0)
             #time_draw.text((10, 65), time.strftime('Where %H:%M:%S'), font = font18, fill = 0)
             time_draw.text((10, 85), time.strftime('%H:%M:%S'), font = font18, fill = 0)
             newimage = time_image.crop(list(rect_size))
-            time_image.paste(newimage, (10,5))  
+            time_image.paste(newimage, (10,5))
             epd.DisplayPartial(epd.getbuffer(time_image))
 
 
